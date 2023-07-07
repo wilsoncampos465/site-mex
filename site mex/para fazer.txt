@@ -1,0 +1,80 @@
+tela inicial:
+	mostrar alguns produtos que possam interessar ao cliente
+	fazer animação para o botão de compra mudar de cor mais suavemente
+
+conteudo pagina inicial:
+	ajustar botão de compra/carrinho
+
+header:
+	nome das categorias
+	corrigir o botão que não expande a navbar ao ser clicado
+	
+footer:
+	colocar mais links
+	quem somos, atendimento, troca e devolução, entrega, app
+	
+
+catalogo:
+	mostrar todos os produtos
+	filtrar por categoria, preço, marca...
+	rolagem infinita
+	botão de subir a pagina
+	animação ao passar mouse em cima para indicar a seleção
+
+produto:
+	preço
+	comprar
+	categorias
+	produtos semelhantes
+	produtos comprados juntos normalmente
+
+login:	
+	salvar token de sessão para não logados poderem usar o carrinho
+	faz o cadastro/login do cliente
+	pedir CNPJ em caso de empresa para adquirir novos clientes
+
+usuario:
+	pagina que mostra configurações do usuario
+	compras recentes
+	notas fiscais
+
+carrinho:
+	mostrar opções de pagamento
+	mostrar lista de compra
+	permitir remover ou alterar quantidade
+	fazer a autenticação do usuario antes de realizar a compra
+	barra para inserir cupom
+	calcular frete (recolher informação do CEP)
+	cancelamento de pedido
+
+SAC:
+	perguntas frequentes
+	contato
+	chatbot
+
+sobre nós:
+	informações da empresa e link para o site
+
+adm (pode ficar dentro da pagina do usuario):
+	pagina do adm onde será possovel alterar coisas no site
+	atualizar produtos
+	criar promoções
+	mostrar metadados, graficos e informações uteis para planejamento futuro
+
+editar produtos:
+	criar navas categorias
+	cadastrar produto
+	alterar preço
+	inserir promoção
+	alteração multipla
+	remover produto
+	mudar categoria
+
+cupom:
+	cupom de uso unico
+	cupom de tempo limitado
+	cupom por preço fixo
+	cupom por %
+	cupom por unidade
+	cupom por compra total
+	cupom de produto especifico	
