@@ -2,7 +2,7 @@
 	<footer id="footer1" class = "d-flex flex-column justify-content-start w-100">
 		<div class="d-flex justify-content-around">
 			<div>
-				<h5 class="titulo-footer">Atendimento</h5>
+				<h5 class="titulo-footer">Aplicativo</h5>
 			</div>
 			<div>
 				<h5 class="titulo-footer">Suporte</h5>

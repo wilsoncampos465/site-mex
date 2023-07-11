@@ -3,11 +3,12 @@ tela inicial:
 	fazer animação para o botão de compra mudar de cor mais suavemente
 
 conteudo pagina inicial:
-	ajustar botão de compra/carrinho
+	fazer fotos expandirem a pagina e centralizar as fotos adequadamente
 
 header:
 	nome das categorias
 	corrigir o botão que não expande a navbar ao ser clicado
+	ajustar formatação do link do carrinho/perfil (mudar a cor)
 	
 footer:
 	colocar mais links
@@ -32,9 +33,12 @@ login:
 	salvar token de sessão para não logados poderem usar o carrinho
 	faz o cadastro/login do cliente
 	pedir CNPJ em caso de empresa para adquirir novos clientes
+	esqueci minha senha
 
 usuario:
-	pagina que mostra configurações do usuario
+	verificar se usuario esta logado
+	atualizar dados
+	mudar senha
 	compras recentes
 	notas fiscais
 
@@ -46,6 +50,13 @@ carrinho:
 	barra para inserir cupom
 	calcular frete (recolher informação do CEP)
 	cancelamento de pedido
+
+
+	
+	
+	
+	cupom de desconto
+	barra de progresso 1- carrinho, 2- pagamento/endereço
 
 SAC:
 	perguntas frequentes

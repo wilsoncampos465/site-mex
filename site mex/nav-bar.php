@@ -16,7 +16,7 @@
 		<div class="d-flex justify-content-center">
 			<input id="" required type="" name="" placeholder="O que Procura?" class="">
 			<div class="botao-pesquisa rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-				<p class="centralizar">Buscar</p>
+				<p class="centralizar-busca">Buscar</p>
 			</div>
 		</div>
 		</form>
@@ -34,7 +34,7 @@
 					<a href="" class="nav-link texto-navbar">Home</a>
 				</li>
 				<li class="nav-item texto">
-					<a href="" class="nav-link texto-navbar">Pagina da Empresa</a>
+					<a href="https://mexdistribuidora.com/" class="nav-link texto-navbar">Pagina da Empresa</a>
 				</li>
 			</ul>
 		</div>
@@ -45,14 +45,18 @@
 		<!-- botão perfil -->
 		<div class="d-flex flex-column justify-content-center">
 			<div>
-				<span>Perfil</span>
-				<i class="fa-solid fa-user"></i>
+				<a href="perfil.php">
+					<span>Perfil</span>
+					<i class="fa-solid fa-user"></i>
+				</a>
 			</div>
 		</div>
 
 		<!-- botão carrinho-->
 		<div class="d-flex flex-column justify-content-center">
-			<i class="fa-solid fa-cart-shopping"> 4</i>
+			<a href="carrinho.php">
+				<i class="fa-solid fa-cart-shopping"> 4</i>	
+			</a>
 		</div>
 		<!-- botão navbar -->
 	    <button class="navbar-toggler" data-toggle="collapse" 

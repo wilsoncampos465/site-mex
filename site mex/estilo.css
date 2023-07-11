@@ -82,6 +82,7 @@ a .texto-footer:hover{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, 0%);
+	max-height: calc(400px - 30px - 50px);
 }
 .nome-produto{
 	width: 100%;
@@ -90,7 +91,7 @@ a .texto-footer:hover{
 	justify-content: center;
 	background-color: white;
 	position:absolute;
-	bottom: 25px;
+	bottom: 30px;
 
 	color: black;
 	font-family: Poppins, sans-serif;
@@ -100,14 +101,12 @@ a .texto-footer:hover{
 }
 .botao-comprar{
 	width: 50%;
-	height: 25px;
+	height: 30px;
 	text-align: center;
 	justify-content: center;
 	background-color: white;
 	position:absolute;
 	left: 0;
-	border-top: 1px;
-	border-style: outset;
 
 	color: black;
 	font-family: Poppins, sans-serif;
@@ -121,14 +120,12 @@ a .texto-footer:hover{
 }
 .botao-carrinho{
 	width: 50%;
-	height: 25px;
+	height: 30px;
 	text-align: center;
 	justify-content: center;
 	background-color: white;
 	position:absolute;
 	right: 0;
-	border-top: 1px;
-	border-style: outset;
 
 	color: black;
 	font-family: Poppins, sans-serif;
@@ -142,13 +139,13 @@ a .texto-footer:hover{
 }
 .div-botoes{
 	width: 100%;
-	height: 25px;
+	height: 30px;
 	position:absolute;
 	bottom: 0px;
 	justify-content: center;
 }
 .conteudo{
-	height: calc(100% - 150px - 115px);
+	min-height: calc(100% - 150px - 115px);
 }
 .botao-pesquisa{
 	height: 40px;
@@ -160,7 +157,7 @@ a .texto-footer:hover{
 .botao-pesquisa:hover{
 	cursor: pointer;
 }
-.centralizar{
+.centralizar-busca{
 	position: relative;
 	top: 50%;
 	transform: translate(0%, -50%);
@@ -170,11 +167,7 @@ a .texto-footer:hover{
 .div-foto{
 	width: 270px;
 	height: 400px;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-bottom: auto;
-	margin-top: auto;
-	border: 1px solid black;
+	margin: 5px;
 	position: relative;
 	background-color: white;
 
@@ -183,6 +176,56 @@ a .texto-footer:hover{
 	width: 200px;
 	height: 100%;
 }
+.carrinho{
+	height: 400px;
+	width: 1500px;
+}
+.div-teste{
+	border: 1px solid black;
+}
+.coluna-itens-carrinho{
+	width: 800px;
+}
+.item-carrinho{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.div-total{
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.div-etapa{
+	width: 300px;
+}
+.centralizar-comprar{
+	position: relative;
+	top: 50%;
+	transform: translate(0%, -50%);
+	margin-left: 17px;
+	margin-bottom: 0px;
+}
+.opcoes{
+	width: 200px;
+}
+.pedidos{
+	width: 800px;
+}
+.filtro-categorias{
+	width: 300px;
+	height: 500px;
+}
+
+
+
+
+
+
+
+
+
 
 
 
