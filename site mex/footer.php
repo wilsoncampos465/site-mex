@@ -1,12 +1,7 @@
 <div class="div-footer-largo">
 	<footer id="footer1" class = "d-flex flex-column justify-content-start w-100">
 		<div class="d-flex justify-content-around">
-			<div>
-				<h5 class="titulo-footer">Aplicativo</h5>
-			</div>
-			<div>
-				<h5 class="titulo-footer">Suporte</h5>
-			</div>
+			<img class="logo-footer" src="imagens/logo-footer.png">
 			<div>
 				<h5 class="titulo-footer">Rede social</h5>
 				<!--instagram-->
@@ -19,38 +14,55 @@
 				</i>
 				</a>
 			</div>
-			<div>
-				<h5 class="titulo-footer">Contato</h5>
-
-				<!--telefone-->
-				<i class="fa-solid fa-mobile-screen-button icone">
-					<span class="texto-footer">
-						(81)991914042
-					</span>
-				</i>
-					<br>
-				<i class="fa-solid fa-phone icone">
-					<span class="texto-footer">
-						(81)3241-0930
-					</span>
-				</i>
-				<br>
-				<!--whatsapp-->
-				<a href="https://wa.me/5581991914042?text=Olá,%20tudo%20bem?%20" target="_blank">
-				<i class="fa-brands fa-whatsapp icone">
-					<span class="texto-footer">
-						(81)991914042
-					</span>
-				</i>
-				</a>
-				<!--email-->
-				<p>					
-				<i class="far fa-envelope icone">
-					<span class="texto-footer">
-						sac@mexdistribuidora.com
-					</span>
-				</i>
-				</p>
+			<div class="d-flex">
+				<div>
+					<h5 class="titulo-footer">Contato</h5>
+					<div class="d-flex">
+						<div>
+							<!--telefone-->
+							<i class="fa-solid fa-mobile-screen-button icone">
+								<span class="texto-footer">
+									(81)991914042
+								</span>
+							</i>
+								<br>
+							<i class="fa-solid fa-phone icone">
+								<span class="texto-footer">
+									(81)3241-0930
+								</span>
+							</i>
+							<br>
+							<!--whatsapp-->
+							<a href="https://wa.me/5581991914042?text=Olá,%20tudo%20bem?%20" target="_blank">
+								<i class="fa-brands fa-whatsapp icone">
+									<span class="texto-footer">
+										(81)991914042
+									</span>
+								</i>
+							</a>
+							<!--email-->
+							<br>			
+							<i class="far fa-envelope icone">
+								<span class="texto-footer">
+									sac@mexdistribuidora.com
+								</span>
+							</i>
+							<br>
+							<i class="far fa-envelope icone">
+								<span class="texto-footer">
+									atendimento@mexdistribuidora.com
+								</span>
+							</i>
+							
+						</div>
+						<div style="margin-left: 10px;">
+							<span class="texto-footer">
+								Rua Ribeiro Pessoa 345,<br>
+								 Caxangá, Recife/PE
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>

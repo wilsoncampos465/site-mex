@@ -39,6 +39,7 @@ footer{
 	font-size: 22px;
 	font-weight: 400;
 	line-height: 33px;
+	padding-top: 20px;
 }
 .texto-footer{
 	color: white;
@@ -58,10 +59,9 @@ a .texto-footer:hover{
 	font-size: 30px;
 	color: white;
 }
-
 /*tamanho dos footers*/
 #footer1{
-	height: 150px;
+	height: 200px;
 }
 #footer2{
 	height: 120px;
@@ -72,7 +72,6 @@ a .texto-footer:hover{
 .div-footer-largo{
 	margin-top: auto;
 }
-
 .foto{
 	max-height: 100%;
 	max-width: 100%;
@@ -145,7 +144,8 @@ a .texto-footer:hover{
 	justify-content: center;
 }
 .conteudo{
-	min-height: calc(100% - 150px - 115px);
+	min-height: calc(100vh - 200px - 115px);
+	padding-top: 20px;
 }
 .botao-pesquisa{
 	height: 40px;
@@ -170,21 +170,22 @@ a .texto-footer:hover{
 	margin: 5px;
 	position: relative;
 	background-color: white;
-
 }
 .div-direita-navbar{
 	width: 200px;
 	height: 100%;
 }
 .carrinho{
-	height: 400px;
+	min-height: calc(100vh - 200px - 115px);
 	width: 1500px;
+	margin-bottom: 20px;
 }
 .div-teste{
 	border: 1px solid black;
 }
 .coluna-itens-carrinho{
 	width: 800px;
+	min-height: calc(100vh - 200px - 115px);
 }
 .item-carrinho{
 	display: flex;
@@ -215,8 +216,43 @@ a .texto-footer:hover{
 }
 .filtro-categorias{
 	width: 300px;
-	height: 500px;
+	height:100%;	
 }
+.div-filtro{
+	margin-left: 30px;
+}
+.flutuar{
+	position: fixed;
+}
+.nav-paginas{
+	margin-top: 16px;
+}
+ul li{
+    list-style-type: none;
+}
+.qr-code{
+	height: 120px;
+	margin-top: auto;
+}
+.app{
+	height: 40px;
+	padding-left: 10px;
+}
+.logo-footer{
+	height: 180px;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

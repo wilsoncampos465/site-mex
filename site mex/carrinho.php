@@ -16,10 +16,20 @@
 	<div class="carrinho d-flex div-teste">
 		<!-- etapa de compra (nav-bar horizontal) -->
 		<div class="div-teste div-etapa">
-			
+			<a href="">
+				produtos
+			</a>
+			<br>
+			<a href="">
+				endereço
+			</a>
+			<br>
+			<a href="">
+				forma de pagamento
+			</a>
 		</div>
-		<!-- itens -->
 
+		<!-- itens -->
 		<div class="coluna-itens-carrinho d-flex flex-column">
 			<span>Produtos</span>
 			<div class="d-flex justify-content-around div-teste">
