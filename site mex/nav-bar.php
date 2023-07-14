@@ -15,8 +15,8 @@
 		<form style="margin-bottom: 0px; margin-top: 20px;">
 		<div class="d-flex justify-content-center">
 			<input id="" required type="" name="" placeholder="O que Procura?" class="">
-			<div class="botao-pesquisa rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-				<p class="centralizar-busca">Buscar</p>
+			<div class="botao-pesquisa div-botao rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
+				<p class="centralizar-texto-botao">Buscar</p>
 			</div>
 		</div>
 		</form>

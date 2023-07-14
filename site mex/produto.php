@@ -11,10 +11,10 @@
 </head>
 <body id="body">
 	<!-- barra de navegação -->
-	<?php require "nav-bar.php" ?>
+	<?php require "nav-bar.php"?>
 	<!-- produtos que passam na tela inicial -->
-	<?php require "tela-inicial.php" ?>
+	<?php require "conteudo-produto.php"?>
 	<!-- rodapé -->
-	<?php require "footer.php" ?>
+	<?php require "footer.php"?>
 </body>
 </html>

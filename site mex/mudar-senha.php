@@ -13,21 +13,33 @@
 	<!-- barra de navegação -->
 	<?php require "nav-bar.php" ?>
 	<!-- mudar senha -->
-	<div class="d-flex flex-column">
+	<div class="d-flex flex-column justify-content-between mudar-senha">
 		<!-- senha antiga -->
-		<span>senha antiga</span>
-		<input type="" placeholder="senha antiga" name="">
+		<div class="d-flex flex-column">
+			<span>senha antiga</span>
+			<input type="" placeholder="senha antiga" name="">	
+		</div>
+		
 		<!-- nova senha -->
-		<span>nova senha</span>
-		<input type="" placeholder="nova senha" name="">
+		<div class="d-flex flex-column">
+			<span>nova senha</span>
+			<input type="" placeholder="nova senha" name="">
+		</div>
+		
 		<!-- repetir nova senha -->
-		<span>repetir nova senha</span>
+		<div class="d-flex flex-column">
+			<span>repetir nova senha</span>
 		<input type="" placeholder="repetir nova senha" name="">
-		<div class="botao-pesquisa rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-			<p class="centralizar-comprar">Aplicar</p>
+		</div>
+
+		<!-- botão -->
+		<div class="d-flex justify-content-center">	
+			<div class="botao-salvar div-botao rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
+				<p class="centralizar-texto-botao">Salvar</p>
+			</div>	
 		</div>
 	</div>
 	<!-- rodapé -->
-	<?php include "footer.php" ?>
+	<?php require "footer.php" ?>
 </body>
 </html>

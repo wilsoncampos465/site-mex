@@ -25,6 +25,12 @@
 				<div class="opcao-perfil">
 					<span class="titulo-perfil centralizar-texto-botao">Meus Dados</span>
 				</div>
+				<div class="opcao-perfil">
+					<span class="titulo-perfil centralizar-texto-botao">Novo Produto</span>
+				</div>
+				<div class="opcao-perfil">
+					<span class="titulo-perfil centralizar-texto-botao">Editar Produto</span>
+				</div>
 			</div>
 			<!-- historico -->
 

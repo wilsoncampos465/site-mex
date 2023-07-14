@@ -20,15 +20,15 @@
 					<div class="d-flex">
 						<div>
 							<!--telefone-->
-							<i class="fa-solid fa-mobile-screen-button icone">
-								<span class="texto-footer">
-									(81)991914042
-								</span>
-							</i>
-								<br>
 							<i class="fa-solid fa-phone icone">
 								<span class="texto-footer">
 									(81)3241-0930
+								</span>
+							</i>
+								<br>
+							<i class="fa-solid fa-mobile-screen-button icone">
+								<span class="texto-footer">
+									(81)99191-4042
 								</span>
 							</i>
 							<br>
@@ -36,7 +36,7 @@
 							<a href="https://wa.me/5581991914042?text=Olá,%20tudo%20bem?%20" target="_blank">
 								<i class="fa-brands fa-whatsapp icone">
 									<span class="texto-footer">
-										(81)991914042
+										(81)99191-4042
 									</span>
 								</i>
 							</a>

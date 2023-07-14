@@ -13,25 +13,41 @@
 	<!-- barra de navegação -->
 	<?php require "nav-bar.php" ?>
 	<!-- atualizar dados -->
-	<div class="d-flex flex-column">
+	<div class="d-flex flex-column justify-content-between atualizar-dados">
 		<!-- endereço -->
-		<span>endereço</span>
-		<input type="" placeholder="endereço antigo" name="">
+		<div class="d-flex flex-column">
+			<span>endereço</span>
+			<input type="" placeholder="endereço antigo" name="">	
+		</div>
+		
 		<!-- email -->
-		<span>e-mail</span>
-		<input type="" placeholder="e-mail antigo" name="">
+		<div class="d-flex flex-column">
+			<span>e-mail</span>
+			<input type="" placeholder="e-mail antigo" name="">
+		</div>
+		
 		<!-- telefone -->
-		<span>telefone</span>
-		<input type="" placeholder="telefone antigo" name="">
+		<div class="d-flex flex-column">
+			<span>telefone</span>
+			<input type="" placeholder="telefone antigo" name="">
+		</div>
+		
+		
 		<!-- cpf -->
-		<span>CPF</span>
-		<input type="" placeholder="CPF antigo" name="">
-		<div class="botao-pesquisa rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-			<p class="centralizar-comprar">Aplicar</p>
+		<div class="d-flex flex-column">
+			<span>CPF</span>
+			<input type="" placeholder="CPF antigo" name="">
+		</div>
+
+		<!-- botão -->
+		<div class="d-flex justify-content-center">	
+			<div class="botao-salvar div-botao rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
+				<p class="centralizar-texto-botao">Salvar</p>
+			</div>	
 		</div>
 	</div>
 		
 	<!-- rodapé -->
-	<?php include "footer.php" ?>
+	<?php require "footer.php" ?>
 </body>
 </html>

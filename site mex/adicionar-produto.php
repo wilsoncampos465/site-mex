@@ -2,7 +2,7 @@
 <head>
 	<title>Meus dados</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel = "icon" href = "imagens/iconeAba.png"/>
+	<link rel = "icon" href = "imagens/icone-aba.png"/>
 	<link rel = "stylesheet" href = "bootstrap.css">
 	<link rel = "stylesheet" href = "estilo.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,37 +15,66 @@
 	<!-- atualizar dados -->
 	<div class="d-flex flex-column">
 		<!-- foto -->
-		<span>imagem</span>
-		<input type="" placeholder="" name="">
-		<!-- nome -->
-		<span>nome do produto</span>
-		<input type="" placeholder="" name="">
-		<!-- preço -->
-		<span>preço</span>
-		<input type="" placeholder="" name="">
-		<!-- quantidade -->
-		<span>quantidade no estoque</span>
-		<input type="" placeholder="" name="">
-		<!-- categorias -->
-		<span>categorias</span>
-		<input type="" placeholder="" name="">
-		<!-- codigo -->
-		<span>codigo phixa (opcional)</span>
-		<input type="" placeholder="" name="">
-		<!-- unidade -->
-		<span>unidade de venda (opcional)</span>
-		<input type="" placeholder="" name="">
-		<!-- criar categoria -->
-		<span>criar categoria (opcional)</span>
-		<input type="" placeholder="" name="">
-		<!-- custo -->
-		<span>custo de compra (opcional)</span>
-		<input type="" placeholder="" name="">
+		<h2>upload de imagem</h2>
+		<form method="post" enctype="multipart/form-data" action="enviarFoto.php">
+			<p>Selecione uma imagem:</p> 
+			<input name="arquivo[]" multiple required type="file">
+			<br>
+			<!-- categorias -->
+			<p>escolher categorias:</p>
+			<input type="checkbox" id="" required name="categoria1" value="">
+			<label for="categoria1">categoria1</label>
+			<br>
+			<input type="checkbox" id="" required name="categoria2" value="">
+			<label for="categoria2">categoria2</label>
+			<br>
+			<input type="checkbox" id="" required name="categoria3" value="">
+			<label for="categoria3">categoria3</label>
+			<br><br>
+
+			<!-- nome -->
+			<label for="nome">nome do produto</label>
+			<br>
+			<input type="" required placeholder="" name="nome">
+			<br>
+			<!-- preço -->
+			<label for="preco">preço</label>
+			<br>
+			<input type="number" required placeholder="" name="preco">
+			<br>
+			<!-- quantidade -->
+			<label for="estoque">quantidade no estoque</label>
+			<br>
+			<input type="number" required placeholder="" name="estoque">
+			<br>
+			<!-- codigo -->
+			<label for="codigo">codigo phixa (opcional)</label>
+			<br>
+			<input type="" placeholder="" name="codigo">
+			<br>
+			<!-- unidade -->
+			<label for="unidade">unidade de venda (opcional)</label>
+			<br>
+			<input type="number" placeholder="" name="unidade">
+			<br>
+			<!-- criar categoria nova -->
+			<label for="">criar categoria (opcional)</label>
+			<br>
+			<input type="" placeholder="" name="">
+			<br>
+			<!-- custo -->
+			<label for="custo">custo de compra (opcional)</label>
+			<br>
+			<input type="number" placeholder="" name="custo">
+			<br>
+			<input type="submit" value="enviar">
+		</form>
+		
 
 
 	</div>
 		
 	<!-- rodapé -->
-	<?php include "footer.php" ?>
+	<?php require "footer.php" ?>
 </body>
 </html>

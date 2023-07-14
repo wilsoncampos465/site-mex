@@ -36,12 +36,8 @@ login:
 	esqueci minha senha
 	cancelamento de pedido
 
-usuario:
+perfil:
 	verificar se usuario esta logado
-	atualizar dados
-	mudar senha
-	compras recentes
-	notas fiscais
 
 carrinho:
 	mostrar opções de pagamento
@@ -65,8 +61,10 @@ sobre nós:
 adm (pode ficar dentro da pagina do usuario):
 	pagina do adm onde será possovel alterar coisas no site
 	atualizar produtos
+		mostrar umagens do produto e modificar a ordem que aparece arrastando a imagem
 	criar promoções
 	mostrar metadados, graficos e informações uteis para planejamento futuro
+	
 
 editar produtos:
 	criar navas categorias

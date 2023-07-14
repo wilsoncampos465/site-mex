@@ -193,14 +193,14 @@
 				<div class="d-flex cupom">
 					
 					<input id="" required type="" name="" placeholder="Cupom" class="">
-					<div class="botao-pesquisa rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-						<p class="centralizar-comprar">Aplicar</p>
+					<div class="botao-pesquisa div-botao rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
+						<p class="centralizar-texto-botao">Aplicar</p>
 					</div>
 				</div>
 				<!-- botão de compra-->
-				<div class=" ">
-					<div class="botao-comprar-carrinho rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-					<p class="centralizar-comprar">Comprar</p>
+				<div class="centralizar-texto-botao">
+					<div class="botao-comprar-carrinho div-botao rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
+					<p class="centralizar-texto-botao">Comprar</p>
 					</div>
 				</div>	
 			</div>
@@ -208,6 +208,6 @@
 		
 	</div>
 	<!-- rodapé -->
-	<?php include "footer.php" ?>
+	<?php require "footer.php" ?>
 </body>
 </html>
