@@ -3,16 +3,16 @@ tela inicial:
 	fazer animação para o botão de compra mudar de cor mais suavemente
 
 conteudo pagina inicial:
-	fazer fotos expandirem a pagina e centralizar as fotos adequadamente
+	deixar filtro mais bonito	
 
 header:
 	nome das categorias
 	corrigir o botão que não expande a navbar ao ser clicado
 	ajustar formatação do link do carrinho/perfil (mudar a cor)
+	deixar responsivo
 	
 footer:
-	colocar mais links
-	quem somos, atendimento, troca e devolução, entrega, app
+	deixar responsivo
 	
 
 catalogo:
@@ -34,6 +34,7 @@ login:
 	faz o cadastro/login do cliente
 	pedir CNPJ em caso de empresa para adquirir novos clientes
 	esqueci minha senha
+	cancelamento de pedido
 
 usuario:
 	verificar se usuario esta logado
@@ -44,19 +45,14 @@ usuario:
 
 carrinho:
 	mostrar opções de pagamento
-	mostrar lista de compra
-	permitir remover ou alterar quantidade
 	fazer a autenticação do usuario antes de realizar a compra
 	barra para inserir cupom
 	calcular frete (recolher informação do CEP)
-	cancelamento de pedido
-
-
 	
 	
-	
-	cupom de desconto
-	barra de progresso 1- carrinho, 2- pagamento/endereço
+	formatação do link no nome do produto
+	colocar forma de pagamento resumida ja que vai ser por api
+	colocar endereço preenchido automaticamente
 
 SAC:
 	perguntas frequentes

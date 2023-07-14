@@ -1,6 +1,6 @@
 <div class="d-flex">
 	<!-- filtro de categorias -->
-	<div class="filtro-categorias d-flex flex-column justify-content-center">
+	<div class="filtro-categorias d-flex flex-column justify-content-start">
 		<div class="flutuar div-filtro"> 
 			<ul class="list-group">
 				<li class="list-group-item">

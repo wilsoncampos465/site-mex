@@ -21,56 +21,43 @@
 			<a href="atualizar-dados.php">atualizar dados</a>
 		</div>
 		<div>
-			<div class="div-teste d-flex flex-column">
 				<!-- historico -->
 				<span>Pedidos</span>
-				<div class="div-test d-flex pedidos justify-content-between">
-					<!-- data -->
-					<div class="div-teste item-carrinho">
-						<span>Data</span>
-					</div>
-					<!-- preço -->
-					<div class="div-teste item-carrinho">
-						<span>Total</span>
-					</div>
-					<!-- exibit nota -->
-					<div class="div-teste item-carrinho">
-						<span>Nota Fiscal</span>
-					</div>
-					<!-- numero do pedido -->
-					<div class="div-teste item-carrinho">
-						<span>Número do Pedido</span>
-					</div>
-					<!-- botão de detalhes -->
-					<div class="div-teste item-carrinho">
-						<span>Mais detalhes</span>
-					</div>
-				</div>
-			</div>
-			<div class="div-teste d-flex flex-column">
-				<div class="div-test d-flex pedidos justify-content-between">
-					<!-- data -->
-					<div class="div-teste item-carrinho">
-						<span>01/01/2000</span>
-					</div>
-					<!-- preço -->
-					<div class="div-teste item-carrinho">
-						<span> R$ 123456</span>
-					</div>
-					<!-- exibit nota -->
-					<div class="div-teste item-carrinho">
-						<span>exibir nota fiscal</span>
-					</div>
-					<!-- numero do pedido -->
-					<div class="div-teste item-carrinho">
-						<span>6153558</span>
-					</div>
-					<!-- botão de detalhes -->
-					<div class="div-teste item-carrinho">
-						<a href="pedido.php">mais detalhes</a>
-					</div>
-				</div>
-			</div>
+				<table class="table">
+					<thead>
+				    	<tr>
+				    		<th scope="col">Data</th>
+				    		<th scope="col">Total</th>
+				      		<th scope="col">Número do Pedido</th>
+				      		<th scope="col">Nota Fiscal</th>
+				      		<th scope="col">Detalhes</th>
+				    	</tr>
+				  	</thead>
+					<tbody>
+					    <tr>
+					      	<td>01/01/2020</td>
+					      	<td>R$123456,00</td>
+					      	<td>132456</td>
+					      	<td><a>Nota Fiscal</a></td>
+					      	<td>Mais detalhes</td>
+					    </tr>
+					    <tr>
+					      	<td>01/01/2020</td>
+					      	<td>R$123456,00</td>
+					      	<td>132456</td>
+					      	<td><a>Nota Fiscal</a></td>
+					      	<td>Mais detalhes</td>
+					    </tr>
+				    	<tr>
+					      	<td>01/01/2020</td>
+					      	<td>R$123456,00</td>
+					      	<td>132456</td>
+					      	<td><a>Nota Fiscal</a></td>
+					      	<td>Mais detalhes</td>
+				    	</tr>
+				  	</tbody>
+				</table>
+					
 		</div>
 			
 	</div>
