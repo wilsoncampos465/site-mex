@@ -45,7 +45,7 @@
 		<!-- botão perfil -->
 		<div class="d-flex flex-column justify-content-center">
 			<div>
-				<a href="perfil.php">
+				<a href="login.php">
 					<span>Perfil</span>
 					<i class="fa-solid fa-user"></i>
 				</a>

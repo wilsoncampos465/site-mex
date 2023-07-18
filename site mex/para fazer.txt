@@ -1,6 +1,8 @@
+conferir todos os nomes das abas
 tela inicial:
 	mostrar alguns produtos que possam interessar ao cliente
 	fazer animação para o botão de compra mudar de cor mais suavemente
+	
 
 conteudo pagina inicial:
 	deixar filtro mais bonito	
@@ -10,6 +12,7 @@ header:
 	corrigir o botão que não expande a navbar ao ser clicado
 	ajustar formatação do link do carrinho/perfil (mudar a cor)
 	deixar responsivo
+	fazer a aba categorias expandir com o mouse em cima
 	
 footer:
 	deixar responsivo
@@ -33,8 +36,13 @@ login:
 	salvar token de sessão para não logados poderem usar o carrinho
 	faz o cadastro/login do cliente
 	pedir CNPJ em caso de empresa para adquirir novos clientes
-	esqueci minha senha
+	esqueci minha senha (pop-up pedindo cpf e envia email para redefinir)
 	cancelamento de pedido
+
+
+
+cadastrar:
+	fazer a pagina
 
 perfil:
 	verificar se usuario esta logado
@@ -59,6 +67,7 @@ sobre nós:
 	informações da empresa e link para o site
 
 adm (pode ficar dentro da pagina do usuario):
+	mudar o botão da pagina para ter a opção "administrar" (não ficar poluido)
 	pagina do adm onde será possovel alterar coisas no site
 	atualizar produtos
 		mostrar umagens do produto e modificar a ordem que aparece arrastando a imagem
@@ -83,3 +92,72 @@ cupom:
 	cupom por unidade
 	cupom por compra total
 	cupom de produto especifico	
+
+funçoes:
+	função para olhar no banco de dados quais filtros existem e inserir eles nas opções de filtro
+
+	função que filtra os itens do catalogo com base nos filtros selecionados
+
+	filtro de preço
+
+	ordenar por algum criterio (preço, mais vendidos...)
+
+	função para pegar as fotos no banco de dados e inseri-las nos locais adequados
+
+	função para calcular quantas imagens tem na pagina e criar a paginação
+	
+	função para colocar o link da pagina do produto na foto do produto
+
+	função para ocultar abas não selecionadas no perfil
+	
+	mudar senha
+
+	atualizar dados pessoais
+
+	autenticação de usuario
+
+	adicionar ou remover produto no carrinho
+	
+	exclui item do carrinho
+
+	calcular frete
+
+	colocar os itens selecionados no carrinho
+
+	acionar a api de compra ao clicar no botão de compra no carrinho	
+
+	aplicar cupom
+
+	calcular ativamente o valor total do carrinho
+	
+	salvar tokens de sessão para usar carrinho mesmo não logado
+
+	botão de pesquisa
+
+	mudar a imagem ao longo do tempo na pagina do produto
+
+	mudar a imagem quando o mouse passar por cima na pagina do produto
+
+	função de cada botão
+
+	
+funções adm:
+
+	criar cupom
+
+	excluir cupom
+	
+	salvar meta dados para uso futuro
+
+	editar produto
+
+	criar produto
+
+	criar categoria
+
+	remover categoria
+
+	fazer sub-categoria
+	
+	ordenar as imagens ao editar o produto ao arrasta-las com o mouse
+
