@@ -14,19 +14,15 @@
 	<?php require "nav-bar.php" ?>
 	
 	<!-- tela de login -->
-	<div class="div-teste login d-flex flex-column justify-content-between">
+	<div class="div-teste login d-flex flex-column justify-content-around">
 		<span class="titulo-login">Login</span>
-		<form>
-			<input class="input" type="text" placeholder="CPF ou e-mail" name="">
+		<form action="autenticar.php">
+			<input class="input" type="text" placeholder="CPF ou e-mail" name="user">
 			<br><br>
-			<input class="input" type="password" placeholder="Senha" name="">
-			<br>
+			<input class="input" type="password" placeholder="Senha" name="senha">
+			<br><br>
 
-			<div class="centralizar-texto-botao" style="margin-top: 50px;">
-				<div class="botao-entrar div-botao rounded" onclick="mudarPagina(parseInt(document.getElementById('pagina').value))">
-					<p class="centralizar-texto-botao">Entrar</p>
-				</div>		
-			</div>
+			<input class="botao-entrar div-botao rounded" type="submit" value="Entrar">
 		</form>
 
 		<div class="d-flex justify-content-around" style="margin-bottom: 10px;">

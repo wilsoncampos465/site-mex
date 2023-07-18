@@ -16,7 +16,7 @@
 	<div class="d-flex flex-column">
 		<!-- foto -->
 		<h2>upload de imagem</h2>
-		<form method="post" enctype="multipart/form-data" action="enviarFoto.php">
+		<form method="post" enctype="multipart/form-data" action=".php">
 			<p>Selecione uma imagem:</p> 
 			<input name="arquivo[]" multiple required type="file">
 			<br>

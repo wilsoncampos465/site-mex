@@ -42,7 +42,12 @@ login:
 
 
 cadastrar:
-	fazer a pagina
+	
+	impedir de mudar o endereço ao escolher o cep
+	os campos estão levemente desalinhados
+	criar botão para voltar a DIV
+	verificar se ja existe o usuario
+	criptografar senha
 
 perfil:
 	verificar se usuario esta logado
