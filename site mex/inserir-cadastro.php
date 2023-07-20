@@ -27,6 +27,6 @@
     	$stmt->execute();
         header("location: index.php");
 	}catch(PDOException $e){
-		echo 'Erro: '.$e->getCode().'<br>Mensagem: <p>' .$e->getMessage().'</p>';
+		echo 'Erro: '.$e->getCode().'<br>Mensagem: <p>' .$e->getMessage().'</p><br><br>Falha ao adicionar cadastro';
 	}
 ?>

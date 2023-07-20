@@ -16,6 +16,7 @@ header:
 	
 footer:
 	deixar responsivo
+	alinhar os numeros
 	
 
 catalogo:
@@ -33,24 +34,27 @@ produto:
 	produtos comprados juntos normalmente
 
 login:	
-	salvar token de sessão para não logados poderem usar o carrinho
-	faz o cadastro/login do cliente
-	pedir CNPJ em caso de empresa para adquirir novos clientes
+	quando criptografar a senha no cadastro, é preciso criptografar a senha do usuario para comparar com a do banco de dados
 	esqueci minha senha (pop-up pedindo cpf e envia email para redefinir)
-	cancelamento de pedido
-
-
 
 cadastrar:
-	
+	so permitir clicar no botão de continuar quando todos os campos estiverem devidamente preenchidos
+	conferir a confirmação de senha
+	checar se o email ou cpf ja foram usados
+	checar se é uma data valida
+	checar se é um cpf valido (existem regras pra cpf)
 	impedir de mudar o endereço ao escolher o cep
 	os campos estão levemente desalinhados
 	criar botão para voltar a DIV
 	verificar se ja existe o usuario
 	criptografar senha
+	corrigir data de nascimento
 
 perfil:
 	verificar se usuario esta logado
+	salvar token de sessão para não logados poderem usar o carrinho
+	pedir CNPJ em caso de empresa para adquirir novos clientes
+	cancelamento de pedido
 
 carrinho:
 	mostrar opções de pagamento
@@ -74,11 +78,17 @@ sobre nós:
 adm (pode ficar dentro da pagina do usuario):
 	mudar o botão da pagina para ter a opção "administrar" (não ficar poluido)
 	pagina do adm onde será possovel alterar coisas no site
+	adicionar produto
+		colocar fotos como required
+		permitir enviar videos
+		verificar se existe nomes repetidos
+		colocar as categorias
+		
 	atualizar produtos
-		mostrar umagens do produto e modificar a ordem que aparece arrastando a imagem
+		mostrar imagens do produto e modificar a ordem que aparece arrastando a imagem
 	criar promoções
 	mostrar metadados, graficos e informações uteis para planejamento futuro
-	
+	adicionar niveis de acesso (usuario, adm, dev) onde limita o adm para ele não fazer merda como adicionar mais adm aleatorio
 
 editar produtos:
 	criar navas categorias

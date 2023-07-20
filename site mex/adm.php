@@ -1,6 +1,6 @@
 <html lang="pt-br">
 <head>
-	<title>Login</title>
+	<title>adm</title>
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel = "icon" href = "imagens/icone-aba.png"/>
 	<link rel = "stylesheet" href = "bootstrap.css">
@@ -12,24 +12,33 @@
 <body id="body">
 	<!-- barra de navegação -->
 	<?php require "nav-bar.php" ?>
+	<!-- vai para a pagina de categorias onde se pode fazer as operações que envolvem as categorias -->
 	
-	<!-- tela de login -->
-	<div class="div-teste login d-flex flex-column justify-content-around">
-		<span class="titulo-login">Login</span>
-		<form action="autenticar.php" method="post">
-			<input class="input" type="text" placeholder="CPF ou e-mail" name="user">
-			<br><br>
-			<input class="input" type="password" placeholder="Senha" name="senha">
-			<br><br>
+	<a href="categorias.php">
+		<h2>categorias</h2>
+	</a>
 
-			<input class="botao-entrar div-botao rounded" type="submit" value="Entrar">
-		</form>
+	<!-- vai para a pagina de produto onde se pode fazer as operações que envolvem os produtos -->
+	<a href="">
+		<h2>produto</h2>
+	</a>
+	
+	<!-- restringir isso para desenvolvedor -->
+	<a href="">
+		<h2>adicionar adm</h2>
+	</a>
+	<!-- leva a uma pagina onde pode ver, editar, adicionar ou remover cupom -->
+	
+	<a href="">
+		<h2>cupom</h2>
+	</a>
 
-		<div class="d-flex justify-content-around" style="margin-bottom: 10px;">
-			<a href="">Esqueceu a senha?</a>
-			<a href="cadastro.php">Criar conta</a>
-		</div>
-	</div>
+	<a href="">
+		<h2>promoção</h2>
+	</a>
+	<a href="">
+		<h2>estatisticas</h2>
+	</a>
 
 	<!-- rodapé -->
 	<?php require "footer.php" ?>
