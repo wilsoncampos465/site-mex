@@ -19,10 +19,10 @@
 
 		<form action="criar-categoria.php" method="post">
 
-			<input type="radio" name="tipo-categoria" value="0">
+			<input type="radio" required name="tipo-categoria" value="0">
 			<label for="tipo-categoria">sem herança</label>
 			<br>
-			<input type="radio" name="tipo-categoria" value="1">
+			<input type="radio" required name="tipo-categoria" value="1">
 			<label for="tipo-categoria">subcategoria</label>
 			<br>
 			<input type="text" name="nome_categoria" placeholder="nome da categoria">
@@ -31,23 +31,34 @@
 			<br>
 			<span>selecionar categoria pai (subcategoria):</span>
 			<br>
-			<select name="pai">
+			<select class="categoria-select" name="categoria-pai">
 				<option value=""></option>
 			</select>
 			<br>
 			<input type="submit" value="criar">
 		</form>
 	</div>
-	<!-- fazer categoria existente virar subcategoria -->
+
+	<!-- editar categoria -->
 	<div>
-		<h4>fazer categoria existente virar subcategoria:</h4>
-		<form action=".php" method="post">
-			<input type="text" name="categoria" placeholder ="nome da categoria">
+		<h4>editar categoria:</h4>
+		<form action="editar-categoria.php" method="post">
+			<span>categoria a ser editada:</span>
 			<br>
-			<span>selecionar categoria pai:</span>
+			<select class="categoria-select" name="categoria-para-editar">
+				<option value=""></option>
+			</select>
 			<br>
-			<select>
-				<option></option>
+
+			<span>novo nome da categoria:</span>
+			<br>
+			<input type="text" name="novo-nome">
+			<br>
+
+			<span>subcategoria de:</span>
+			<br>
+			<select class="categoria-select" name="categoria-pai">
+				<option value=""></option>
 			</select>
 			<br>
 			<input type="submit" value="editar">
@@ -59,8 +70,8 @@
 		<form action=".php" method="post">
 			<span>selecionar categoria:</span>
 			<br>
-			<select>
-				<option></option>
+			<select class="categoria-select" name="categoria-pai">
+				<option value=""></option>
 			</select>
 			<br>
 			<input type="submit" value="excluir">
@@ -72,8 +83,8 @@
 		<form action=".php" method="post">
 			<span>selecionar categoria:</span>
 			<br>
-			<select>
-				<option></option>
+			<select class="categoria-select" name="categoria-pai">
+				<option value=""></option>
 			</select>
 			<br>
 			<span>-------mostrar todos os produtos em checkbox-------</span>
@@ -92,3 +103,48 @@
 	<?php require "footer.php" ?>
 </body>
 </html>
+
+<script type="text/javascript">
+	function carregarCategorias() {
+	    var xmlhttp = new XMLHttpRequest();
+	    xmlhttp.onreadystatechange = function() {
+	        if (this.readyState === 4 && this.status === 200) {
+	            var categorias = JSON.parse(this.responseText);
+	            var selectCategorias = document.getElementsByClassName("categoria-select");
+
+	            // Para cada <select> com a classe "categoria-select"
+	            for (var i = 0; i < selectCategorias.length; i++) {
+	                var selectCategoria = selectCategorias[i];
+
+	                // Limpar as opções existentes
+	                selectCategoria.innerHTML = '<option value="0">Selecione uma categoria existente</option>';
+
+	                // Adicionar as opções das categorias existentes
+	                categorias.forEach(function(categoria) {
+	                    var option = document.createElement("option");
+	                    option.value = categoria;
+	                    option.text = categoria;
+	                    selectCategoria.appendChild(option);
+	                });
+	            }
+	        }
+	    };
+
+	    // Fazer a requisição ao servidor para obter as categorias existentes
+	    xmlhttp.open("GET", "nomes-categorias.php", true);
+	    xmlhttp.send();
+	}
+
+	// function mostrarCampoNovaCategoria(selectElement) {
+	// 	var campoNovaCategoria = document.getElementById("campo-nova-categoria");
+
+	// 	if (selectElement.value === "novo") {
+	// 	campoNovaCategoria.style.display = "block";
+	// 	} else {
+	// 	campoNovaCategoria.style.display = "none";
+	// 	}
+	// }
+
+// Carregar as categorias ao carregar a página
+carregarCategorias();
+</script>

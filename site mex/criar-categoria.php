@@ -2,7 +2,6 @@
 
 	$nomeCategoria = $_POST['nome_categoria'];
 	$tipoCategoria = $_POST['tipo-categoria'];
-	$nomeCategoria = $_POST['nome_categoria'];
 
 	// Verifica se o nome da categoria possui espaço em branco
 	if (strpos($nomeCategoria, ' ') !== false) {
@@ -37,34 +36,38 @@
 	    echo "A categoria já existe no banco de dados.<br><br>";
 	    // Lide com a situação de categoria existente
 	} else {
-	    // A categoria não existe, então crie uma nova coluna na tabela "categorias"
+	    // A categoria não existe, então cria uma nova coluna na tabela "categorias"
 	
 	    $query ="Alter table categorias add column ".$nomeCategoria." varchar(20) DEFAULT NULL;";
 	   
 	    $conexao->exec($query);
 	    echo "A nova categoria foi criada com sucesso!<br><br>";
-	}
-
-	if($tipoCategoria == 1){
 		
-		$categoriaPai = $_POST['pai'];
+		if($tipoCategoria == 0){
+			$query = "
+	 			INSERT into subcategorias(categoria) values('". $nomeCategoria ."');
+	 			";
+	 		$stmt = $conexao->prepare($query);
+	    	$stmt->execute();
+	    	$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
-		$query = "
- 		SELECT * FROM subcategorias where categoria pai = :categoria_pai";
- 		$stmt = $conexao->prepare($query);
-		$stmt->bindValue(':nome_categoria', $categoriaPai);
-    	$stmt->execute();
-    	$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+	    	echo "subcategoria adicionada com sucesso<br><br>";
+		} 
 
-		$hierarquia = ($resultado['hierarquia'] + 1);
+		if($tipoCategoria == 1){
+			
+			$categoriaPai = $_POST['categoria-pai'];	
 
-		$query = '
- 		insert into subcategoria(categoria, categoria_pai, hierarquia) values( "'. $nomeCategoria .'", "'. $categoriaPai .'",'. $hierarquia .');';
-		$stmt = $conexao->prepare($query);
-    	$stmt->execute();
+			$query = '
+	 		insert into subcategorias(categoria, categoria_pai) values( "'. $nomeCategoria .'", "'. $categoriaPai .'");';
+			$stmt = $conexao->prepare($query);
+	    	$stmt->execute();
 
-    	echo "subcategoria adicionada com sucesso<br><br>";
-	} else{
-		echo "não possui subcategoria<br><br>";
+	    	echo "subcategoria adicionada com sucesso<br><br>";
+		} else{
+			echo "não possui subcategoria<br><br>";
+		}
 	}
+
+	header("location: categorias.php");
 ?>

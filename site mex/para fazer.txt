@@ -168,7 +168,8 @@ funções adm:
 
 	criar produto
 
-	criar categoria
+	criar categoria -> mostrar como uma checkbox que retrai invez de uma lista que so aceita uma opção
+			fazer ser obrigatorio selecionar uma subcategoria ao pressionar a opção de subcategoria
 
 	remover categoria
 
