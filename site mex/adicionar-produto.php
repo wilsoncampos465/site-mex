@@ -81,8 +81,16 @@
 		$conexao = new PDO($dsn, $usuario, $senha);
 
 		$query = '
- 		insert into produtos(nome, preco, descricao, estoque, custo_compra, codigo_produto, pasta_imagens, quantidade_fotos) values("'. $nome .'" , "'. $preco .'", "'. $descricao .'", "'. $estoque .'", "'. $custo .'", "'. $codigo .'", "'.$pastaDestino.'", "'.$quant_fotos.'");';
+ 		INSERT into produtos(nome, preco, descricao, estoque, custo_compra, codigo_produto, pasta_imagens, quantidade_fotos) values(:nome, :preco, :descricao, :estoque, :custo, :codigo, :pastaDestino, :quant_fotos);';
 		$stmt = $conexao->prepare($query);
+		$stmt->bindValue(':nome', $nome);
+		$stmt->bindValue(':preco', $preco);
+		$stmt->bindValue(':descricao', $descricao);
+		$stmt->bindValue(':estoque', $estoque);
+		$stmt->bindValue(':custo', $custo);
+		$stmt->bindValue(':codigo', $codigo);
+		$stmt->bindValue(':pastaDestino', $pastaDestino);
+		$stmt->bindValue(':quant_fotos', $quant_fotos);
     	$stmt->execute();
     	echo "<br>sucesso em salvar no banco de dados<br>";
         //header("location: index.php");

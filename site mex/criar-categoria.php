@@ -38,17 +38,19 @@
 	} else {
 	    // A categoria não existe, então cria uma nova coluna na tabela "categorias"
 	
-	    $query ="Alter table categorias add column ".$nomeCategoria." varchar(20) DEFAULT NULL;";
+	    $query ="ALTER table categorias add column ".$nomeCategoria." varchar(20) DEFAULT NULL;";
 	   
-	    $conexao->exec($query);
+	   	$stmt = $conexao->prepare($query);
+		$stmt->execute();
 	    echo "A nova categoria foi criada com sucesso!<br><br>";
 		
 		if($tipoCategoria == 0){
 			$query = "
-	 			INSERT into subcategorias(categoria) values('". $nomeCategoria ."');
+	 			INSERT into subcategorias(categoria) values(:nomeCategoria);
 	 			";
 	 		$stmt = $conexao->prepare($query);
-	    	$stmt->execute();
+			$stmt->bindValue(':nomeCategoria', $nomeCategoria);
+			$stmt->execute();
 	    	$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
 
 	    	echo "subcategoria adicionada com sucesso<br><br>";
@@ -59,9 +61,11 @@
 			$categoriaPai = $_POST['categoria-pai'];	
 
 			$query = '
-	 		insert into subcategorias(categoria, categoria_pai) values( "'. $nomeCategoria .'", "'. $categoriaPai .'");';
+	 		INSERT into subcategorias(categoria, categoria_pai) values(:nomeCategoria, :categoriaPai);';
 			$stmt = $conexao->prepare($query);
-	    	$stmt->execute();
+			$stmt->bindValue(':nomeCategoria', $nomeCategoria);
+			$stmt->bindValue(':categoriaPai', $categoriaPai);
+			$stmt->execute();
 
 	    	echo "subcategoria adicionada com sucesso<br><br>";
 		} else{

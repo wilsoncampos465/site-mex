@@ -1,4 +1,5 @@
 conferir todos os nomes das abas
+mudar a forma que enviar comandos pro servidor, remover concatenação e colocar relação de variaveis
 tela inicial:
 	mostrar alguns produtos que possam interessar ao cliente
 	fazer animação para o botão de compra mudar de cor mais suavemente
@@ -162,7 +163,7 @@ funções adm:
 
 	excluir cupom
 	
-	salvar meta dados para uso futuro
+	salvar meta-dados para uso futuro
 
 	editar produto
 
@@ -170,10 +171,6 @@ funções adm:
 
 	criar categoria -> mostrar como uma checkbox que retrai invez de uma lista que so aceita uma opção
 			fazer ser obrigatorio selecionar uma subcategoria ao pressionar a opção de subcategoria
-
-	remover categoria
-
-	fazer sub-categoria
 	
 	ordenar as imagens ao editar o produto ao arrasta-las com o mouse
 

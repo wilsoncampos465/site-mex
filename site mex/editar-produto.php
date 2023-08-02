@@ -14,14 +14,22 @@
 	<?php require "nav-bar.php" ?>
 	<!-- atualizar dados -->
 	<div class="d-flex flex-column">
-		<!-- foto -->
-		<h2>upload de imagem</h2>
+		<!-- select dos produtos -->
+		<select>
+			<option>
+		</select>
 		<form method="post" enctype="multipart/form-data" action="adicionar-produto.php" enctype="multipart/form-data">
-			<p>Selecione imagens:</p> 
+			<!-- foto -->
+			<p>adicionar imagens:</p> 
 			<input name="arquivos[]" multiple type="file">
 			<br>
 			<!-- categorias -->
-			<p>escolher categorias:</p>
+			<p>escolher categorias:----------------------------- mostrar todas as categorias e deixar selecionada as que o produto se enquadra</p>
+			<details>
+				<summary>teste</summary>
+				<input type="checkbox" id="" name="categorias" value="1">
+				<label for="categorias">categoria1</label>	
+			</details>
 			<input type="checkbox" id="" name="categorias" value="1">
 			<label for="categorias">categoria1</label>
 			<br>

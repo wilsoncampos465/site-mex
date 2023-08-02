@@ -19,7 +19,7 @@
 	</a>
 
 	<!-- vai para a pagina de produto onde se pode fazer as operações que envolvem os produtos -->
-	<a href="">
+	<a href="adm-produtos.php">
 		<h2>produto</h2>
 	</a>
 	

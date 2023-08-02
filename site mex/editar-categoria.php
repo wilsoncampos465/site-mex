@@ -2,11 +2,7 @@
 
 	$novoNome = $_POST['novo-nome'];
 	$nomeCategoria = $_POST['categoria-para-editar'];
-	$categoriaPai_denometemporario =  $_POST['categoria-pai'];
-
-
-
-
+	$categoriaPai =  $_POST['categoria-pai'];
 
 	// Verifica se o nome da categoria possui espaço em branco
 	if (strpos($novoNome, ' ') !== false) {
@@ -22,18 +18,6 @@
 	    echo 'Erro: ' . $e->getCode() . '<br>Mensagem: <p>' . $e->getMessage() . '</p>';
 	    // Trate o erro de conexão conforme necessário
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	// Consultar a estrutura da tabela
 	$consulta = "DESCRIBE categorias";
@@ -66,7 +50,7 @@
 		// 4- atualizar o nome nas subcategorias que possuem ela como pai
 	    // Use declarações preparadas para evitar injeção de SQL
 	// Construa a consulta diretamente com o nome da coluna
-	$query = "ALTER TABLE categorias CHANGE $nomeCategoria $novoNome varchar(20) DEFAULT NULL";
+	$query = "ALTER TABLE categorias CHANGE ".$nomeCategoria." ".$novoNome." varchar(20) DEFAULT NULL";
 
 	$stmt = $conexao->prepare($query);
 	$stmt->execute();
@@ -78,7 +62,7 @@
 
 	$stmt = $conexao->prepare($query);
 	$stmt->bindValue(':novoNome', $novoNome);
-	$stmt->bindValue(':categoriaPaiNovo', $categoriaPai_denometemporario);
+	$stmt->bindValue(':categoriaPaiNovo', $categoriaPai);
 	$stmt->bindValue(':nomeAntigo', $nomeCategoria);
 	$stmt->execute();
 
