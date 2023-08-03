@@ -14,9 +14,10 @@
 	<?php require "nav-bar.php" ?>
 	<!-- atualizar dados -->
 	<div class="d-flex flex-column">
+		<span>escolher produto:</span>
 		<!-- select dos produtos -->
-		<select>
-			<option>
+		<select class="produtos-select" name="produto-para-editar">
+			<option value=""></option>
 		</select>
 		<form method="post" enctype="multipart/form-data" action="adicionar-produto.php" enctype="multipart/form-data">
 			<!-- foto -->
@@ -25,20 +26,7 @@
 			<br>
 			<!-- categorias -->
 			<p>escolher categorias:----------------------------- mostrar todas as categorias e deixar selecionada as que o produto se enquadra</p>
-			<details>
-				<summary>teste</summary>
-				<input type="checkbox" id="" name="categorias" value="1">
-				<label for="categorias">categoria1</label>	
-			</details>
-			<input type="checkbox" id="" name="categorias" value="1">
-			<label for="categorias">categoria1</label>
-			<br>
-			<input type="checkbox" id="" name="categorias" value="2">
-			<label for="categorias">categoria2</label>
-			<br>
-			<input type="checkbox" id="" name="categorias" value="3">
-			<label for="categorias">categoria3</label>
-			<br><br>
+			
 
 			<!-- nome -->
 			<label for="nome">nome do produto</label>
@@ -86,3 +74,47 @@
 	<?php require "footer.php" ?>
 </body>
 </html>
+<script type="text/javascript">
+	function carregarProdutos() {
+	    var xmlhttp = new XMLHttpRequest();
+	    xmlhttp.onreadystatechange = function() {
+	        if (this.readyState === 4 && this.status === 200) {
+	            var produtos = JSON.parse(this.responseText);
+	            var selectProdutos = document.getElementsByClassName("produtos-select");
+
+	            // Para cada <select> com a classe "categoria-select"
+	            for (var i = 0; i < selectProdutos.length; i++) {
+	                var selectProduto = selectProdutos[i];
+
+	                // Limpar as opções existentes
+	                selectProduto.innerHTML = '<option value="0">Selecione um produto existente</option>';
+
+	                // Adicionar as opções das categorias existentes
+	                produtos.forEach(function(produto) {
+	                	// Verifica se o nome da categoria possui espaço em branco
+	                	var nome_com_espaco = produto.nome;
+						// if (produto.nome.indexOf('_') !== -1) {
+						// 	// Substitui os espaços por underscores
+						// 	nome_com_espaco = produto.nome.replace( '_', / /g);
+						// 	console.log(nome_com_espaco);
+						// }
+						if (produto.nome.indexOf('_') !== -1) {
+							// Substitui todos os "_" por espaços em branco
+							nome_com_espaco = produto.nome.replace(/_/g, " ");
+						}
+	                    var option = document.createElement("option");
+
+	                    option.value = produto.nome;
+	                    option.text = nome_com_espaco;
+	                    selectProduto.appendChild(option);
+	                });
+	            }
+	        }
+	    };
+
+	    // Fazer a requisição ao servidor para obter as categorias existentes
+	    xmlhttp.open("GET", "nomes-produtos.php", true);
+	    xmlhttp.send();
+	}
+	carregarProdutos()
+</script>

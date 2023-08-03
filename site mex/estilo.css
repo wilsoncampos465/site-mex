@@ -459,7 +459,9 @@ ul li{
 	margin-bottom: auto;
 }
 
-
+.esconder{
+	display: none;
+}
 
 
 
@@ -477,9 +479,7 @@ ul li{
 	height: 100%;
 }
 
-.esconder{
-	display: none;
-}
+
 #mural{
 	margin-left: 50px;
 	margin-right: 50px;

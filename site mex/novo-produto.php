@@ -18,18 +18,16 @@
 		<h2>upload de imagem</h2>
 		<form method="post" enctype="multipart/form-data" action="adicionar-produto.php" enctype="multipart/form-data">
 			<p>Selecione imagens:</p> 
-			<input name="arquivos[]" multiple type="file">
+			<input required name="arquivos[]" multiple type="file">
 			<br>
 			<!-- categorias -->
 			<p>escolher categorias:</p>
-			<input type="checkbox" id="" name="categorias" value="1">
-			<label for="categorias">categoria1</label>
-			<br>
-			<input type="checkbox" id="" name="categorias" value="2">
-			<label for="categorias">categoria2</label>
-			<br>
-			<input type="checkbox" id="" name="categorias" value="3">
-			<label for="categorias">categoria3</label>
+			<!-- <select class="categoria-select" name="categoria-para-excluir">
+				<option value=""></option>
+			</select> -->
+			<ul id="listaCategorias">
+				
+			</ul>
 			<br><br>
 
 			<!-- nome -->
@@ -57,11 +55,6 @@
 			<br>
 			<input type="" placeholder="" required name="codigo">
 			<br>
-			<!-- criar categoria nova -->
-			<label for="">criar categoria (opcional)</label>
-			<br>
-			<input type="" placeholder="" name="">
-			<br>
 			<!-- custo -->
 			<label for="custo">custo de compra (opcional)</label>
 			<br>
@@ -78,3 +71,87 @@
 	<?php require "footer.php" ?>
 </body>
 </html>
+<script type="text/javascript">
+	function carregarCategorias() {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          var categorias = JSON.parse(this.responseText);
+          var listaCategorias = document.getElementById("listaCategorias");
+
+          // ordena a herarquia das categorias (principal -> secundaria -> terciaria...)
+          categorias = ordenarCategorias(categorias);
+
+          categorias.forEach(function (categoria) {
+          	// console.log(categoria);
+          	//if para fazer a logica das categorias principais
+            if (categoria.categoria_pai == "categoria_principal") {
+            	
+            	//cria as checkbox das categorias principais
+				var liCategoria = document.createElement("li");
+				var checkbox = document.createElement("input");
+				liCategoria.id = categoria.categoria;
+				checkbox.type = "checkbox";
+				checkbox.name = "categorias[]";
+				checkbox.value = categoria.categoria;
+				
+				listaCategorias.appendChild(liCategoria);
+				liCategoria.appendChild(checkbox);
+				liCategoria.appendChild(document.createTextNode(categoria.categoria));
+            }
+            //logica para categorias secundarias
+            else{
+            	//cria as checkbox das subcategorias
+				var liCategoria = document.createElement("li");
+				var ulCategoria = document.createElement("ul");
+				var checkbox = document.createElement("input");
+				var listaCategoriaPai = document.getElementById(categoria.categoria_pai);
+				liCategoria.id = categoria.categoria;
+				checkbox.type = "checkbox";
+				checkbox.name = "categorias[]";
+				checkbox.value = categoria.categoria;
+				
+				listaCategoriaPai.appendChild(ulCategoria);
+				ulCategoria.appendChild(liCategoria);
+				liCategoria.appendChild(checkbox);
+				liCategoria.appendChild(document.createTextNode(categoria.categoria));
+    		}
+          });
+        }
+      };
+
+      // Fazer a requisição ao servidor para obter as categorias existentes
+      xmlhttp.open("GET", "nomes-subcategorias.php", true);
+      xmlhttp.send();
+    }
+
+    // Função para ordenar as categorias em ordem de hierarquia
+	function ordenarCategorias(categorias) {
+		var categoriasOrdenadas = [];
+
+		//sai do while quando todas as categorias forem ordenadas
+		while(categoriasOrdenadas.length != categorias.length){
+			categorias.forEach(function(categoria) {
+				//verifica se a categoria ja esta inclusa no array
+				if(categoriasOrdenadas.indexOf(categoria) == -1){
+					//adiciona primeiro as categorias principais na lista de categorias ordenadas
+					if (categoria.categoria_pai == "categoria_principal"){
+						//adiciona a categoria no final do array
+						categoriasOrdenadas.push(categoria);
+					}
+					//verifica se a categoria pai ja foi ordenada
+					var categoriaPaiOrdenada = categoriasOrdenadas.some(function(cat){
+							return cat.categoria == categoria.categoria_pai;
+						});
+					//adiciona a categoria caso a categoria pai ja tenha sido ordenada
+					if(categoriaPaiOrdenada){
+						categoriasOrdenadas.push(categoria);
+					}
+				}
+				
+			});
+		}
+		return categoriasOrdenadas;	
+	}
+	carregarCategorias();
+</script>

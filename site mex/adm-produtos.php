@@ -25,31 +25,18 @@
 		<a href="editar-produto.php">
 			<h4>editar produto:</h4>	
 		</a>
-		<!-- <form action="editar-categoria.php" method="post">
-			<span>categoria a ser editada:</span>
-			<br>
-			<select class="categoria-select" name="categoria-para-editar">
-				<option value=""></option>
-			</select>
-			<br>
-
-			<span>novo nome da categoria:</span>
-			<br>
-			<input type="text" name="novo-nome">
-			<br>
-
-			<span>subcategoria de:</span>
-			<br>
-			<select class="categoria-select" name="categoria-pai">
-				<option value=""></option>
-			</select>
-			<br>
-			<input type="submit" value="editar">
-		</form> -->
 	</div>
 	<!-- excluir categoria -->
 	<div>
 		<h4>excluir produto:</h4>
+		<!-- select dos produtos -->
+		<form action="excluir-produto.php" method="post">
+			<select class="produtos-select" name="produto-para-excluir">
+				<option value=""></option>
+			</select>
+			<input type="submit" name="excluir">	
+		</form>
+		
 		<!-- <form action="excluir-categoria.php" method="post">
 			<span>selecionar categoria:</span>
 			<br>
@@ -62,7 +49,8 @@
 	</div>
 	<!-- opção que seleciona uma categoria e mostra uma checkbox com todos os produtos existentes para selecionar quais serão selecionados nesta categoria -->
 	<div>
-		<h4>incluir categoria em produto</h4>
+		<a href="editar-produto.php">
+			<h4>incluir categoria em produto</h4>
 		<!-- <form action=".php" method="post">
 			<span>selecionar categoria:</span>
 			<br>
@@ -74,6 +62,7 @@
 			<br>
 			<input type="submit" value="incluir">
 		</form> -->
+		</a>
 	</div>
 
 
@@ -84,50 +73,46 @@
 </html>
 
 <script type="text/javascript">
-	function carregarCategorias() {
+	function carregarProdutos() {
 	    var xmlhttp = new XMLHttpRequest();
-
 	    xmlhttp.onreadystatechange = function() {
-	    	console.log(xmlhttp);
 	        if (this.readyState === 4 && this.status === 200) {
-	            
-
-	            var response = JSON.parse(this.responseText);
-	            var categorias = response.categorias;
-	            var categoriasPai = response.categoriasPai;
-	            console.log(categorias);
-	            console.log(categoriasPai);
-
-	            var selectCategorias = document.getElementsByClassName("categoria-select");
+	            var produtos = JSON.parse(this.responseText);
+	            var selectProdutos = document.getElementsByClassName("produtos-select");
 
 	            // Para cada <select> com a classe "categoria-select"
-	            for (var i = 0; i < selectCategorias.length; i++) {
-	                var selectCategoria = selectCategorias[i];
+	            for (var i = 0; i < selectProdutos.length; i++) {
+	                var selectProduto = selectProdutos[i];
 
 	                // Limpar as opções existentes
-	                selectCategoria.innerHTML = '<option value="0">Selecione uma categoria existente</option>';
+	                selectProduto.innerHTML = '<option value="0">Selecione um produto existente</option>';
 
 	                // Adicionar as opções das categorias existentes
-	                categorias.forEach(function(categoria) {
+	                produtos.forEach(function(produto) {
+	                	// Verifica se o nome da categoria possui espaço em branco
+	                	var nome_com_espaco = produto.nome;
+						// if (produto.nome.indexOf('_') !== -1) {
+						// 	// Substitui os espaços por underscores
+						// 	nome_com_espaco = produto.nome.replace( '_', / /g);
+						// 	console.log(nome_com_espaco);
+						// }
+						if (produto.nome.indexOf('_') !== -1) {
+							// Substitui todos os "_" por espaços em branco
+							nome_com_espaco = produto.nome.replace(/_/g, " ");
+						}
 	                    var option = document.createElement("option");
-	                    option.value = categoria;
-	                    option.text = categoria;
-	                    selectCategoria.appendChild(option);
+
+	                    option.value = produto.nome;
+	                    option.text = nome_com_espaco;
+	                    selectProduto.appendChild(option);
 	                });
 	            }
 	        }
 	    };
 
 	    // Fazer a requisição ao servidor para obter as categorias existentes
-	    xmlhttp.open("GET", "nomes-categorias.php", true);
+	    xmlhttp.open("GET", "nomes-produtos.php", true);
 	    xmlhttp.send();
 	}
-/*
-["teste1","teste3","teste5","teste6","teste7","teste8"]
-["categoria_principal","categoria_principal","teste1","teste1","categoria_principal","teste6"]
-
-
-*/
-// Carregar as categorias ao carregar a página
-carregarCategorias();
+	//carregarProdutos()
 </script>

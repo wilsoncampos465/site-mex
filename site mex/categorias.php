@@ -31,12 +31,9 @@
 			<br>
 			<span>selecionar categoria pai (subcategoria):</span>
 			<br>
-			<!-- <select class="categoria-select" name="categoria-pai">
+			<select class="categoria-select" name="categoria-pai">
 				<option value=""></option>
-			</select> -->
-			<ul id="listaCategorias">
-		    	<!-- A lista de categorias será criada dinamicamente aqui -->
-		    </ul>
+			</select>
 			<br>
 			<input type="submit" value="criar">
 		</form>
@@ -108,113 +105,119 @@
 </html>
 
 <script type="text/javascript">
-// 	function carregarCategorias() {
-// 	    var xmlhttp = new XMLHttpRequest();
-// 	    xmlhttp.onreadystatechange = function() {
-// 	        if (this.readyState === 4 && this.status === 200) {
-// 	            var categorias = JSON.parse(this.responseText);
-// 	            var selectCategorias = document.getElementsByClassName("categoria-select");
 
-// 	            // Para cada <select> com a classe "categoria-select"
-// 	            for (var i = 0; i < selectCategorias.length; i++) {
-// 	                var selectCategoria = selectCategorias[i];
+	// function carregarCategorias() {
+    //   var xmlhttp = new XMLHttpRequest();
+    //   xmlhttp.onreadystatechange = function () {
+    //     if (this.readyState === 4 && this.status === 200) {
+    //       var categorias = JSON.parse(this.responseText);
+    //       var listaCategorias = document.getElementById("listaCategorias");
 
-// 	                // Limpar as opções existentes
-// 	                selectCategoria.innerHTML = '<option value="0">Selecione uma categoria existente</option>';
+    //       // ordena a herarquia das categorias (principal -> secundaria -> terciaria...)
+    //       categorias = ordenarCategorias(categorias);
 
-// 	                // Adicionar as opções das categorias existentes
-// 	                categorias.forEach(function(categoria) {
-// 	                    var option = document.createElement("option");
-// 	                    option.value = categoria;
-// 	                    option.text = categoria;
-// 	                    selectCategoria.appendChild(option);
-// 	                });
-// 	            }
-// 	        }
-// 	    };
+    //       categorias.forEach(function (categoria) {
+    //       	// console.log(categoria);
+    //       	//if para fazer a logica das categorias principais
+    //         if (categoria.categoria_pai == "categoria_principal") {
+            	
+    //         	//cria as checkbox das categorias principais
+	// 			var liCategoria = document.createElement("li");
+	// 			var checkbox = document.createElement("input");
+	// 			liCategoria.id = categoria.categoria;
+	// 			checkbox.type = "checkbox";
+	// 			checkbox.name = "categorias[]";
+	// 			checkbox.value = categoria.categoria;
+				
+	// 			listaCategorias.appendChild(liCategoria);
+	// 			liCategoria.appendChild(checkbox);
+	// 			liCategoria.appendChild(document.createTextNode(categoria.categoria));
+    //         }
+    //         //logica para categorias secundarias
+    //         else{
+    //         	//cria as checkbox das subcategorias
+	// 			var liCategoria = document.createElement("li");
+	// 			var ulCategoria = document.createElement("ul");
+	// 			var checkbox = document.createElement("input");
+	// 			var listaCategoriaPai = document.getElementById(categoria.categoria_pai);
+	// 			liCategoria.id = categoria.categoria;
+	// 			checkbox.type = "checkbox";
+	// 			checkbox.name = "categorias[]";
+	// 			checkbox.value = categoria.categoria;
+				
+	// 			listaCategoriaPai.appendChild(ulCategoria);
+	// 			ulCategoria.appendChild(liCategoria);
+	// 			liCategoria.appendChild(checkbox);
+	// 			liCategoria.appendChild(document.createTextNode(categoria.categoria));
+    // 		}
+    //       });
+    //     }
+    //   };
 
-// 	    // Fazer a requisição ao servidor para obter as categorias existentes
-// 	    xmlhttp.open("GET", "nomes-categorias.php", true);
-// 	    xmlhttp.send();
-// 	}
+    //   // Fazer a requisição ao servidor para obter as categorias existentes
+    //   xmlhttp.open("GET", "nomes-categorias.php", true);
+    //   xmlhttp.send();
+    // }
 
-// 	// function mostrarCampoNovaCategoria(selectElement) {
-// 	// 	var campoNovaCategoria = document.getElementById("campo-nova-categoria");
+    // // Função para ordenar as categorias em ordem de hierarquia
+	// function ordenarCategorias(categorias) {
+	// 	var categoriasOrdenadas = [];
 
-// 	// 	if (selectElement.value === "novo") {
-// 	// 	campoNovaCategoria.style.display = "block";
-// 	// 	} else {
-// 	// 	campoNovaCategoria.style.display = "none";
-// 	// 	}
-// 	// }
+	// 	//sai do while quando todas as categorias forem ordenadas
+	// 	while(categoriasOrdenadas.length != categorias.length){
+	// 		categorias.forEach(function(categoria) {
+	// 			//verifica se a categoria ja esta inclusa no array
+	// 			if(categoriasOrdenadas.indexOf(categoria) == -1){
+	// 				//adiciona primeiro as categorias principais na lista de categorias ordenadas
+	// 				if (categoria.categoria_pai == "categoria_principal"){
+	// 					//adiciona a categoria no final do array
+	// 					categoriasOrdenadas.push(categoria);
+	// 				}
+	// 				//verifica se a categoria pai ja foi ordenada
+	// 				var categoriaPaiOrdenada = categoriasOrdenadas.some(function(cat){
+	// 						return cat.categoria == categoria.categoria_pai;
+	// 					});
+	// 				//adiciona a categoria caso a categoria pai ja tenha sido ordenada
+	// 				if(categoriaPaiOrdenada){
+	// 					categoriasOrdenadas.push(categoria);
+	// 				}
+	// 			}
+				
+	// 		});
+	// 	}
+	// 	return categoriasOrdenadas;	
+	// }
+	function carregarCategorias() {
+	    var xmlhttp = new XMLHttpRequest();
+	    xmlhttp.onreadystatechange = function() {
+	        if (this.readyState === 4 && this.status === 200) {
+	            var categorias = JSON.parse(this.responseText);
+	            var selectCategorias = document.getElementsByClassName("categoria-select");
 
-// // Carregar as categorias ao carregar a página
-// carregarCategorias();
+	            // Para cada <select> com a classe "categoria-select"
+	            for (var i = 0; i < selectCategorias.length; i++) {
+	                var selectCategoria = selectCategorias[i];
 
-//--------------------------------------------------
-// Função para criar a lista de subcategorias recursivamente
-    function criarListaSubcategorias(subcategorias, lista) {
-    	console.log(subcategorias);
-      subcategorias.forEach(function (subcategoria) {
-        var liSubcategoria = document.createElement("li");
-        var checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.name = "categorias[]";
-        checkbox.value = subcategoria.categoria;
-        liSubcategoria.appendChild(checkbox);
-        liSubcategoria.appendChild(document.createTextNode(subcategoria.categoria));
+	                // Limpar as opções existentes
+	                selectCategoria.innerHTML = '<option value="0">Selecione uma categoria existente</option>';
 
-        // Se a subcategoria tiver subcategorias, criar uma lista aninhada para elas
-        if (subcategoria.subcategorias && subcategoria.subcategorias.length > 0) {
-          var ulSubcategorias = document.createElement("ul");
-          criarListaSubcategorias(subcategoria.subcategorias, ulSubcategorias);
-          liSubcategoria.appendChild(ulSubcategorias);
-        }
+	                // Adicionar as opções das categorias existentes
+	                categorias.forEach(function(categoria) {
+	                    var option = document.createElement("option");
+	                    option.value = categoria;
+	                    option.text = categoria;
+	                    selectCategoria.appendChild(option);
+	                });
+	            }
+	        }
+	    };
 
-        lista.appendChild(liSubcategoria);
-      });
-    }
+	    // Fazer a requisição ao servidor para obter as categorias existentes
+	    xmlhttp.open("GET", "nomes-categorias.php", true);
+	    xmlhttp.send();
+	}
 
-    // Função para carregar as categorias via XMLHttpRequest e criar a lista de checkboxes
-    function carregarCategorias() {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-          var categorias = JSON.parse(this.responseText);
-          var listaCategorias = document.getElementById("listaCategorias");
-
-          // Criar a lista de categorias principais
-          categorias.forEach(function (categoria) {
-            if (categoria.categoria_pai != "categoria_principal") {
-            	console.log("4");
-              var liCategoria = document.createElement("li");
-              var checkbox = document.createElement("input");
-              checkbox.type = "checkbox";
-              checkbox.name = "categorias[]";
-              checkbox.value = categoria.categoria;
-              liCategoria.appendChild(checkbox);
-              liCategoria.appendChild(document.createTextNode(categoria.categoria));
-              // Filtrar subcategorias pertencentes à categoria atual
-              var subcategorias = categorias.filter(function (subcategoria) {
-                return subcategoria.categoria_pai === categoria.categoria;
-              });
-              // Se a categoria tiver subcategorias, criar uma lista aninhada para elas
-              if (subcategorias.length > 0) {
-                var ulSubcategorias = document.createElement("ul");
-                console.log(subcategorias);
-                criarListaSubcategorias(subcategorias, ulSubcategorias);
-                liCategoria.appendChild(ulSubcategorias);
-              }
-              listaCategorias.appendChild(liCategoria);
-            }
-          });
-        }
-      };
-
-      // Fazer a requisição ao servidor para obter as categorias existentes
-      xmlhttp.open("GET", "nomes-categorias.php", true);
-      xmlhttp.send();
-    }
+	
 
     // Chamar a função para carregar as categorias e criar a lista de checkboxes
     carregarCategorias();

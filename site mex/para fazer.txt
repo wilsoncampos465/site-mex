@@ -80,9 +80,7 @@ adm (pode ficar dentro da pagina do usuario):
 	mudar o botão da pagina para ter a opção "administrar" (não ficar poluido)
 	pagina do adm onde será possovel alterar coisas no site
 	adicionar produto
-		colocar fotos como required
 		permitir enviar videos
-		verificar se existe nomes repetidos
 		colocar as categorias
 		
 	atualizar produtos
@@ -92,7 +90,7 @@ adm (pode ficar dentro da pagina do usuario):
 	adicionar niveis de acesso (usuario, adm, dev) onde limita o adm para ele não fazer merda como adicionar mais adm aleatorio
 
 editar produtos:
-	criar navas categorias
+	pedir confirmação para excluir produto
 	cadastrar produto
 	alterar preço
 	inserir promoção
@@ -167,7 +165,7 @@ funções adm:
 
 	editar produto
 
-	criar produto
+	criar produto -> fazer categorias pai serem inseridas automaticamente
 
 	criar categoria -> mostrar como uma checkbox que retrai invez de uma lista que so aceita uma opção
 			fazer ser obrigatorio selecionar uma subcategoria ao pressionar a opção de subcategoria

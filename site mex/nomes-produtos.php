@@ -9,16 +9,16 @@
 	    // Trate o erro de conexão conforme necessário
 	}
 
-	// Consultar a estrutura da tabela
-	$consulta = "DESCRIBE categorias";
-	$resultado = $conexao->query($consulta);
+	try {
+	    $query = "SELECT nome FROM produtos";
+	    $stmt = $conexao->prepare($query);
+	    $stmt->execute();
+	    $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	$categorias = array();
 
-	while ($coluna = $resultado->fetch(PDO::FETCH_ASSOC)) {
-	    $categorias[] = $coluna['Field'];	    
+	} catch (PDOException $e) {
+	    echo "Erro: " . $e->getMessage();
 	}		
 	
-	echo json_encode($categorias);
+	echo json_encode($produtos);
 ?>
-
